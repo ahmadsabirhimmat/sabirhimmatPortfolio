@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Holtwood One SC", serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #9810fa;
+  --color-brand-soft: #c084fc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #e4e4e7;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-color: #05050a;
+    background-image:
+      radial-gradient(ellipse 75% 45% at 50% -20%, rgba(152, 16, 250, 0.14), transparent),
+      radial-gradient(ellipse 35% 28% at 100% 40%, rgba(152, 16, 250, 0.06), transparent),
+      linear-gradient(-90deg, transparent calc(5em - 1px), rgba(255, 255, 255, 0.045) calc(5em - 1px), rgba(255, 255, 255, 0.045) 5em),
+      linear-gradient(0deg, transparent calc(5em - 1px), rgba(255, 255, 255, 0.045) calc(5em - 1px), rgba(255, 255, 255, 0.045) 5em);
+    background-size: auto, auto, 5em 5em, 5em 5em;
+  }
+
+  #root {
+    overflow-x: hidden;
+    min-height: 100%;
+  }
+}
+
+.holtwood-one-sc-regular,
+.info-section h3,
+.info-section h1,
+.section-heading {
+  font-family: var(--font-display);
+}
+
+.site-container {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.section-heading {
+  @apply text-[clamp(1.65rem,4.5vw,2.75rem)] leading-tight text-purple-400;
+}
+
+.glass-card {
+  @apply rounded-2xl border border-white/10 bg-zinc-950/60 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur-md transition duration-300;
+}
+
+/* nav links */
+nav li {
+  font-size: 0.95rem;
+  color: #e1e1e1;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+nav li:focus,
+nav li:hover {
+  color: #7d2ae8;
+}
+
+nav li:focus:after,
+nav li:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+nav li:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #7d2ae8;
+  transition: width 400ms cubic-bezier(0.25, 0.8, 0.25, 1), left 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/***** download CV *****/
+.button {
+  height: 45px;
+  width: 150px;
+  max-width: 100%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+}
+
+.button:hover {
+  box-shadow: 0 0 40px rgba(152, 16, 250, 0.25);
+}
+
+.type1::after {
+  content: "Thanks";
+  height: 50px;
+  width: 150px;
+  background-color: #9810fa;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(50px);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1::before {
+  content: "Download CV";
+  height: 50px;
+  width: 150px;
+  background-color: rgb(236, 168, 43);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(0) scale(1.05);
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1:focus::after {
+  transform: translateY(0) scale(1.05);
+}
+
+/* social icons */
+.wrapper .icon {
+  margin: 0 6px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 42px;
+  color: #000;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon span i {
+  font-size: 1.15rem;
+  display: flex;
+}
+
+.wrapper .icon .tooltip {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 25px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -58px;
+  opacity: 1;
+}
+
+.icon .tooltip:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  background: inherit;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.wrapper .icon:hover span {
+  color: #fff;
+}
+
+.wrapper .facebook:hover span,
+.wrapper .facebook:hover .tooltip {
+  background: #3b5999;
+}
+
+.wrapper .whatapp:hover span,
+.wrapper .whatapp:hover .tooltip {
+  background: #21d33b;
+}
+
+.wrapper .instagram:hover span,
+.wrapper .instagram:hover .tooltip {
+  background: #e1306c;
+}
+
+.wrapper .github:hover span,
+.wrapper .github:hover .tooltip {
+  background: #333;
+}
+
+.wrapper .email:hover span,
+.wrapper .email:hover .tooltip {
+  background: rgb(96, 91, 91);
+}
+
+.project-image figure img {
+  object-fit: cover;
+  filter: drop-shadow(0 25px 25px #101828);
+}
+
+.uses-techs span {
+  margin-top: 0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background-color: #9810fa;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #d1d5dc;
+  background-color: rgba(9, 9, 11, 0.7);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #9810fa;
+  box-shadow: 0 0 0 3px rgba(152, 16, 250, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+@media (max-width: 1023px) {
+  .wrapper .icon .tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper .icon {
+    margin: 0 4px;
+  }
+
+  .wrapper .icon span {
+    height: 38px;
+    width: 38px;
+  }
+}
