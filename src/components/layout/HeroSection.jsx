@@ -32,7 +32,13 @@ export const HeroSection = () => {
                             <HeroTitle />
                         </div>
                         <div className="buttons mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4 min-[640px]:justify-start">
-                            <a href="/resume.pdf" className="button type1" title="Download resume" download>
+                            <a
+                                href="/Ahmad_Sabir_Himmat_Resume.pdf"
+                                className="button type1"
+                                title="Download resume"
+                                download="Ahmad_Sabir_Himmat_Resume.pdf"
+                                type="application/pdf"
+                            >
                                 Download CV
                             </a>
                             <LetTalkBtn />
