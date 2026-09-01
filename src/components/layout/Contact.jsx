@@ -5,7 +5,7 @@ export const Contact = () => {
     return (
         <section className="contact py-14 sm:py-20">
             <div className="site-container">
-                <SectionTitle id="contact" kicker="04 — Contact" title="Get In Touch" center />
+                <SectionTitle id="contact" kicker="06 — Contact" title="Get In Touch" center />
                 <div className="grid items-center gap-8 rounded-2xl border border-white/10 bg-zinc-950/60 p-4 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur-md sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-10">
                     <div className="mx-auto w-full max-w-md lg:max-w-none">
                         <figure className="h-40 sm:h-56 lg:h-[22rem]">

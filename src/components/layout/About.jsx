@@ -9,16 +9,24 @@ export const About = () => {
                 <p className="text-center text-base leading-relaxed text-zinc-300 sm:text-lg lg:text-left lg:text-xl lg:leading-8">
                     Full Stack Web and Mobile Developer with 5+ years of hands-on experience specializing in building scalable applications using the MERN stack. I have a strong track record of delivering modern, high-performance web platforms and cross-platform mobile apps tailored to user needs. My expertise covers both frontend and backend development, API integration, and database design, enabling me to build complete solutions from concept to deployment.
                 </p>
-                <div className="my-info mt-8 grid grid-cols-1 gap-3 min-[480px]:grid-cols-3 sm:gap-4">
-                    <div className="glass-card px-3 py-4 text-center hover:border-purple-500/40">
+                <p className="mt-4 text-center text-sm leading-relaxed text-zinc-400 sm:text-base lg:text-left lg:text-lg lg:leading-7">
+                    Based in Kandahar, I focus on React interfaces, UX-minded layouts, and taking products from idea to a live deploy. Outside work I stay active with running, bodybuilding, photography, travel, and cooking.
+                </p>
+                <div className="my-info mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+                    <div className="glass-card flex min-h-[5.5rem] flex-col justify-center px-3 py-4 text-center hover:border-purple-500/40">
                         <p className="text-[0.7rem] font-semibold tracking-[0.14em] text-amber-400 sm:text-xs">LOCATION</p>
-                        <p className="mt-1 text-sm text-zinc-100 sm:text-base">Afghanistan</p>
+                        <p className="mt-1 text-sm text-zinc-100 sm:text-base">Kandahar</p>
+                        <p className="text-[0.65rem] text-zinc-400">Afghanistan</p>
                     </div>
-                    <div className="glass-card px-3 py-4 text-center hover:border-purple-500/40">
+                    <div className="glass-card flex min-h-[5.5rem] flex-col justify-center px-3 py-4 text-center hover:border-purple-500/40">
                         <p className="text-[0.7rem] font-semibold tracking-[0.14em] text-amber-400 sm:text-xs">EXPERIENCE</p>
                         <p className="mt-1 text-sm text-zinc-100 sm:text-base">5+ Years</p>
                     </div>
-                    <div className="glass-card px-3 py-4 text-center hover:border-purple-500/40">
+                    <div className="glass-card flex min-h-[5.5rem] flex-col justify-center px-3 py-4 text-center hover:border-purple-500/40">
+                        <p className="text-[0.7rem] font-semibold tracking-[0.14em] text-amber-400 sm:text-xs">DEGREE</p>
+                        <p className="mt-1 text-sm text-zinc-100 sm:text-base">BCS</p>
+                    </div>
+                    <div className="glass-card flex min-h-[5.5rem] flex-col justify-center px-3 py-4 text-center hover:border-purple-500/40">
                         <p className="text-[0.7rem] font-semibold tracking-[0.14em] text-amber-400 sm:text-xs">DATE OF BIRTH</p>
                         <p className="mt-1 text-sm text-zinc-100 sm:text-base">11 Oct 2003</p>
                     </div>

@@ -5,6 +5,8 @@ import { LetTalkBtn } from "../UI/LetTalkBtn";
 const links = [
     { href: "/", label: "HOME" },
     { href: "#about", label: "ABOUT" },
+    { href: "#services", label: "SERVICES" },
+    { href: "#experience", label: "EXPERIENCE" },
     { href: "#skills", label: "SKILLS" },
     { href: "#projects", label: "PROJECTS" },
     { href: "#contact", label: "CONTACT" },
@@ -28,8 +30,8 @@ export const Header = () => {
                     </NavLink>
                 </div>
 
-                <nav className="hidden lg:block">
-                    <ul className="flex items-center gap-7 text-gray-300 xl:gap-10">
+                <nav className="hidden xl:block">
+                    <ul className="flex items-center gap-5 text-gray-300 2xl:gap-8">
                         {links.map((link) => (
                             <li key={link.href}>
                                 <a href={link.href}>{link.label}</a>
@@ -38,14 +40,14 @@ export const Header = () => {
                     </ul>
                 </nav>
 
-                <div className="hidden lg:block">
+                <div className="hidden xl:block">
                     <LetTalkBtn />
                 </div>
 
                 <button
                     type="button"
                     onClick={() => setIsOpen(!isOpen)}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-2xl text-gray-200 transition hover:bg-white/10 lg:hidden"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-2xl text-gray-200 transition hover:bg-white/10 xl:hidden"
                     aria-expanded={isOpen}
                     aria-label={isOpen ? "Close menu" : "Open menu"}
                 >
@@ -54,8 +56,8 @@ export const Header = () => {
             </section>
 
             <nav
-                className={`overflow-hidden border-t border-white/10 bg-neutral-950/97 transition-all duration-500 ease-in-out lg:hidden ${
-                    isOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
+                className={`overflow-hidden border-t border-white/10 bg-neutral-950/97 transition-all duration-500 ease-in-out xl:hidden ${
+                    isOpen ? "max-h-[36rem] opacity-100" : "max-h-0 opacity-0"
                 }`}
             >
                 <ul className="flex flex-col gap-1 px-4 py-4 text-gray-300">

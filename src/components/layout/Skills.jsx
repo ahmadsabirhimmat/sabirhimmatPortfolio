@@ -18,7 +18,7 @@ const SkillBlock = ({ title, children }) => (
 export const Skills = () => {
     return (
         <>
-            <SectionTitle id="skills" kicker="02 — Expertise" title="My Stack" />
+            <SectionTitle id="skills" kicker="04 — Expertise" title="My Stack" />
             <div className="skills-info space-y-10 sm:space-y-14">
                 <SkillBlock title="Frontend">
                     <SkillImages img={"/js.png"} name={"JavaScript"} />
