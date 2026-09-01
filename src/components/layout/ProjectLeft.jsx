@@ -7,7 +7,6 @@ export const ProjectLeft = () => {
                 pName={"Bashper Khidmatuna"}
                 pPar={"Emergency contacts platform with an admin web portal, a provider web portal, and a user app for Android and iOS. Built to manage urgent contacts, providers, and service requests across web and mobile."}
                 stacks={["React", "Tailwind", "Node", "Express", "MongoDB", "React Native", "Expo"]}
-                repo={"https://github.com/ahmadsabirhimmat/bashper-khidmatuna"}
                 links={[
                     { label: "Admin Portal", href: "https://bashper-khidmatuna-1.onrender.com" },
                     { label: "Provider Portal", href: "https://bashper-khidmatuna-provider.onrender.com" },
