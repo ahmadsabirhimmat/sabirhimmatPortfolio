@@ -146,6 +146,32 @@ nav li:after {
   transform: translateY(0) scale(1.05);
 }
 
+@media (max-width: 639px) {
+  .hero-ctas .button {
+    height: 34px;
+    width: 108px;
+  }
+
+  .hero-ctas .type1::before,
+  .hero-ctas .type1::after {
+    height: 38px;
+    width: 108px;
+    font-size: 0.75rem;
+  }
+
+  .hero-ctas .type1::after {
+    transform: translateY(38px);
+    font-size: 0.8rem;
+  }
+
+  .hero-ctas .talk-btn {
+    min-height: 34px;
+    min-width: 108px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}
+
 /* social icons */
 .wrapper .icon {
   margin: 0 6px;

@@ -31,7 +31,7 @@ export const HeroSection = () => {
                         <div className="mt-4 min-h-[2.25rem] text-zinc-300">
                             <HeroTitle />
                         </div>
-                        <div className="buttons mt-7 flex flex-wrap items-center justify-center gap-3 sm:gap-4 min-[640px]:justify-start">
+                        <div className="hero-ctas buttons mt-7 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 min-[640px]:justify-start">
                             <a
                                 href="/Ahmad_Sabir_Himmat_Resume.pdf"
                                 className="button type1"
@@ -45,13 +45,13 @@ export const HeroSection = () => {
                         </div>
                     </div>
 
-                    <div className="sabir-image relative order-2 mt-4 justify-self-center pt-6 sm:mt-0 sm:pt-8">
-                        <figure className="flex h-64 w-52 justify-center rounded-2xl bg-neutral-950 shadow-2xl shadow-slate-800 sm:h-80 sm:w-64 lg:h-[26.25rem] lg:w-80">
+                    <div className="sabir-image relative order-2 mt-2 justify-self-center pt-8 sm:mt-0 sm:pt-8">
+                        <figure className="flex h-[21.25rem] w-72 max-w-[85vw] justify-center rounded-2xl bg-neutral-950 shadow-2xl shadow-slate-800 sm:h-80 sm:w-64 sm:max-w-none lg:h-[26.25rem] lg:w-80">
                             <img
                                 src="sabir.png"
                                 loading="lazy"
                                 alt="Ahmad Sabir Himmat"
-                                className="relative -top-6 h-[16.5rem] max-w-[12.5rem] rounded-2xl object-cover object-top shadow-2xl shadow-slate-800 transition-all duration-700 hover:translate-y-6 sm:-top-7 sm:h-[21rem] sm:max-w-[16rem] lg:h-[25rem] lg:max-w-[17.5rem] lg:hover:translate-y-9"
+                                className="relative -top-8 h-[22.25rem] max-w-[17rem] rounded-2xl object-cover object-top shadow-2xl shadow-slate-800 transition-all duration-700 hover:translate-y-6 sm:-top-7 sm:h-[21rem] sm:max-w-[16rem] lg:h-[25rem] lg:max-w-[17.5rem] lg:hover:translate-y-9"
                             />
                         </figure>
                     </div>
