@@ -11,8 +11,8 @@ export const HeroSection = () => {
     return (
         <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 lg:flex lg:min-h-[100svh] lg:items-center lg:pt-20 lg:pb-16">
             <div className="site-container">
-                <div className="grid grid-cols-1 items-center gap-8 min-[640px]:grid-cols-2 min-[640px]:gap-8 lg:grid-cols-[1fr_auto_auto] xl:gap-14">
-                    <div className="info-section order-1 w-full max-w-xl justify-self-center text-center min-[640px]:justify-self-start min-[640px]:text-left">
+                <div className="grid grid-cols-1 items-center gap-8 min-[640px]:grid-cols-[minmax(0,1fr)_auto] min-[640px]:gap-8 lg:grid-cols-[minmax(0,1fr)_auto_auto] xl:gap-14">
+                    <div className="info-section order-1 min-w-0 w-full max-w-xl justify-self-center overflow-visible text-center min-[640px]:justify-self-start min-[640px]:text-left">
                         <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-500/25 bg-purple-500/10 px-3 py-1 text-xs font-medium text-zinc-200">
                             <span className="size-1.5 animate-pulse rounded-full bg-emerald-400" />
                             Available for work
@@ -25,7 +25,7 @@ export const HeroSection = () => {
                         >
                             AHMAD SABIR
                         </motion.h3>
-                        <h1 className="mt-1 bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-[clamp(2.1rem,9vw,4.4rem)] leading-[0.95] text-transparent">
+                        <h1 className="mt-1 overflow-visible whitespace-nowrap bg-gradient-to-b from-white to-zinc-400 bg-clip-text pr-[0.12em] text-[clamp(2.1rem,11vw,2.85rem)] leading-[0.95] text-transparent sm:text-[clamp(2.25rem,5.2vw,2.85rem)] md:text-[clamp(2.45rem,5vw,3.15rem)] lg:text-[clamp(2.9rem,4.5vw,3.75rem)] xl:text-[clamp(3.4rem,4.2vw,4.4rem)]">
                             HIMMAT
                         </h1>
                         <div className="mt-4 min-h-[2.25rem] text-zinc-300">
