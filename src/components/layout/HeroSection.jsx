@@ -68,7 +68,8 @@ export const HeroSection = () => {
                             >
                                 Download CV
                             </a>
-                            <a href="#projects" className="talk-btn">
+
+                            <a href="#projects" className="talk-btn text-center flex items-center justify-center">
                                 View projects
                             </a>
                         </div>
