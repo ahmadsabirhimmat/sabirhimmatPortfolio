@@ -30,12 +30,12 @@ export const Header = () => {
             <div className="site-container flex h-16 items-center gap-3">
                 <a href="#top" onClick={closeMenu} className="shrink-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-400">
                     <img
-                        src="/himmat-technical-logo.webp"
-                        alt="Himmat Technical"
-                        width={314}
-                        height={98}
+                        src="/himmattech-logo.png"
+                        alt="Himmat Tech"
+                        width={294}
+                        height={401}
                         decoding="async"
-                        className="h-8 w-auto sm:h-9"
+                        className="h-11 w-auto sm:h-12"
                     />
                 </a>
 

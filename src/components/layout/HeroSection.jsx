@@ -1,22 +1,34 @@
-import { FaFacebookF, FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { easeInOut, motion } from "motion/react";
 import { HeroTitle } from "../UI/HeroTitle";
-import { LetTalkBtn } from "../UI/LetTalkBtn";
 
 const socials = [
     { href: "https://www.facebook.com/share/1Cm5ugSNk6/", label: "Facebook", icon: FaFacebookF, external: true },
     { href: "https://wa.me/93700784854", label: "WhatsApp", icon: FaWhatsapp, external: true },
     { href: "https://www.instagram.com/sabirhimmat?igsh=cmYybjNpa2F4NXcz", label: "Instagram", icon: FaInstagram, external: true },
-    { href: "https://github.com/ahmadsabirhimmat", label: "GitHub", icon: FaGithub, external: true },
     { href: "mailto:sabirkhanhimmat33@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Sabir,", label: "Email", icon: MdOutlineEmail },
 ];
 
-const facts = [
-    { value: "5+ years", label: "Experience" },
-    { value: "MERN", label: "Web and mobile" },
-    { value: "Kandahar", label: "Afghanistan" },
-];
+const SocialLinks = ({ className }) => (
+    <ul className={className}>
+        {socials.map((item) => {
+            const Icon = item.icon;
+            return (
+                <li key={item.label}>
+                    <a
+                        href={item.href}
+                        aria-label={item.label}
+                        {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-base text-zinc-200 transition hover:border-purple-400/60 hover:text-white"
+                    >
+                        <Icon aria-hidden="true" />
+                    </a>
+                </li>
+            );
+        })}
+    </ul>
+);
 
 export const HeroSection = () => {
     return (
@@ -56,36 +68,11 @@ export const HeroSection = () => {
                             >
                                 Download CV
                             </a>
-                            <LetTalkBtn />
-                            <a href="#projects" className="px-1 text-sm font-semibold text-purple-300 underline-offset-4 hover:underline">
+                            <a href="#projects" className="talk-btn">
                                 View projects
                             </a>
                         </div>
-                        <ul className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-                            {socials.map((item) => {
-                                const Icon = item.icon;
-                                return (
-                                    <li key={item.label}>
-                                        <a
-                                            href={item.href}
-                                            aria-label={item.label}
-                                            {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                                            className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-base text-zinc-200 transition hover:border-purple-400/60 hover:text-white"
-                                        >
-                                            <Icon aria-hidden="true" />
-                                        </a>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                        <dl className="mt-8 grid grid-cols-3 gap-3 border-t border-white/10 pt-6 text-left">
-                            {facts.map((fact) => (
-                                <div key={fact.value}>
-                                    <dt className="text-sm font-semibold text-white sm:text-base">{fact.value}</dt>
-                                    <dd className="mt-1 text-xs leading-snug text-zinc-400 sm:text-sm">{fact.label}</dd>
-                                </div>
-                            ))}
-                        </dl>
+                        <SocialLinks className="mt-6 hidden flex-wrap items-center justify-center gap-2 lg:flex lg:justify-start" />
                     </motion.div>
 
                     <motion.figure
@@ -105,6 +92,7 @@ export const HeroSection = () => {
                             className="aspect-[4/5] w-full rounded-[1.75rem] object-cover object-top shadow-2xl shadow-black/50 ring-1 ring-white/10"
                         />
                     </motion.figure>
+                    <SocialLinks className="flex flex-wrap items-center justify-center gap-2 lg:hidden" />
                 </div>
             </div>
         </section>

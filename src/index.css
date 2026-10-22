@@ -12,6 +12,7 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 4.5rem;
+    scroll-snap-type: y proximity;
   }
 
   body {
@@ -47,6 +48,12 @@
 
 .section-heading {
   @apply text-[clamp(1.65rem,4.5vw,2.75rem)] leading-tight text-purple-400;
+}
+
+.project-screen {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-margin-top: 4rem;
 }
 
 .glass-card {
@@ -93,8 +100,8 @@
   content: "Download CV";
   height: 50px;
   width: 150px;
-  background-color: rgb(236, 168, 43);
-  color: #fff;
+  background-color: #f4f4f5;
+  color: #18181b;
   position: absolute;
   top: 0;
   left: 0;
@@ -248,22 +255,6 @@
 .wrapper .email:hover span,
 .wrapper .email:hover .tooltip {
   background: rgb(96, 91, 91);
-}
-
-.project-image figure img {
-  object-fit: cover;
-  filter: drop-shadow(0 25px 25px #101828);
-}
-
-.uses-techs span {
-  margin-top: 0;
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-  color: #fff;
-  background-color: #9810fa;
 }
 
 .form-group {

@@ -1,4 +1,4 @@
-import { FaFacebookF, FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 
 export const Footer = () => {
@@ -19,9 +19,6 @@ export const Footer = () => {
                     </a>
                     <a href="https://www.instagram.com/sabirhimmat?igsh=cmYybjNpa2F4NXcz" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition hover:text-purple-400">
                         <FaInstagram />
-                    </a>
-                    <a href="https://github.com/ahmadsabirhimmat" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transition hover:text-purple-400">
-                        <FaGithub />
                     </a>
                     <a href="mailto:sabirkhanhimmat33@gmail.com" aria-label="Email" className="transition hover:text-purple-400">
                         <MdOutlineEmail />
