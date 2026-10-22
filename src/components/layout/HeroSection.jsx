@@ -7,7 +7,7 @@ const socials = [
     { href: "https://www.facebook.com/share/1Cm5ugSNk6/", label: "Facebook", icon: FaFacebookF, external: true },
     { href: "https://wa.me/93700784854", label: "WhatsApp", icon: FaWhatsapp, external: true },
     { href: "https://www.instagram.com/sabirhimmat?igsh=cmYybjNpa2F4NXcz", label: "Instagram", icon: FaInstagram, external: true },
-    { href: "mailto:sabirkhanhimmat33@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Sabir,", label: "Email", icon: MdOutlineEmail },
+    { href: "mailto:ahmadsabirhimmat@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Sabir,", label: "Email", icon: MdOutlineEmail },
 ];
 
 const SocialLinks = ({ className }) => (
