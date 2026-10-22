@@ -20,7 +20,7 @@ export const Footer = () => {
                     <a href="https://www.instagram.com/sabirhimmat?igsh=cmYybjNpa2F4NXcz" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition hover:text-purple-400">
                         <FaInstagram />
                     </a>
-                    <a href="mailto:sabirkhanhimmat33@gmail.com" aria-label="Email" className="transition hover:text-purple-400">
+                    <a href="mailto:ahmadsabirhimmat@gmail.com" aria-label="Email" className="transition hover:text-purple-400">
                         <MdOutlineEmail />
                     </a>
                 </div>
