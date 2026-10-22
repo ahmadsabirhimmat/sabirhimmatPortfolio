@@ -6,8 +6,8 @@ export const ProjectRight = () => {
             <ProjectCont
                 pImg={"/projectPics/e-comm.png"}
                 pName={"E-Comm"}
-                pPar={"E-Comm A full-stack marketplace where users can browse products across categories, add items to cart, and securely checkout. Features include user authentication, advanced product search with filters, order history, and an admin dashboard."}
-                stacks={["HTML", "CSS", "JS"]}
+                pPar={"A static storefront with category browsing, product search, a product page, cart, and contact page."}
+                stacks={["HTML", "CSS", "JavaScript"]}
             />
             <ProjectCont
                 pImg={"/projectPics/himmattechnial.png"}

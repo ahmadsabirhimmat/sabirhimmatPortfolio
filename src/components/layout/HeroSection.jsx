@@ -1,101 +1,112 @@
-import { LetTalkBtn } from "../UI/LetTalkBtn"
-import { FaFacebookF } from "react-icons/fa6";
-import { FaWhatsapp } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { HeroTitle } from "../UI/HeroTitle";
+import { FaFacebookF, FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
-import { easeInOut, motion } from "motion/react"
+import { easeInOut, motion } from "motion/react";
+import { HeroTitle } from "../UI/HeroTitle";
+import { LetTalkBtn } from "../UI/LetTalkBtn";
+
+const socials = [
+    { href: "https://www.facebook.com/share/1Cm5ugSNk6/", label: "Facebook", icon: FaFacebookF, external: true },
+    { href: "https://wa.me/93700784854", label: "WhatsApp", icon: FaWhatsapp, external: true },
+    { href: "https://www.instagram.com/sabirhimmat?igsh=cmYybjNpa2F4NXcz", label: "Instagram", icon: FaInstagram, external: true },
+    { href: "https://github.com/ahmadsabirhimmat", label: "GitHub", icon: FaGithub, external: true },
+    { href: "mailto:sabirkhanhimmat33@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Sabir,", label: "Email", icon: MdOutlineEmail },
+];
+
+const facts = [
+    { value: "5+ years", label: "Experience" },
+    { value: "MERN", label: "Web and mobile" },
+    { value: "Kandahar", label: "Afghanistan" },
+];
 
 export const HeroSection = () => {
     return (
-        <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 lg:flex lg:min-h-[100svh] lg:items-center lg:pt-20 lg:pb-16">
+        <section id="top" className="relative overflow-hidden pt-24 pb-14 sm:pt-28 lg:pt-32 lg:pb-20">
             <div className="site-container">
-                <div className="grid grid-cols-1 items-center gap-8 min-[640px]:grid-cols-[minmax(0,1fr)_auto] min-[640px]:gap-8 lg:grid-cols-[minmax(0,1fr)_auto_auto] xl:gap-14">
-                    <div className="info-section order-1 min-w-0 w-full max-w-xl justify-self-center overflow-visible text-center min-[640px]:justify-self-start min-[640px]:text-left">
-                        <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-500/25 bg-purple-500/10 px-3 py-1 text-xs font-medium text-zinc-200">
-                            <span className="size-1.5 animate-pulse rounded-full bg-emerald-400" />
+                <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,22rem)] lg:gap-16 xl:grid-cols-[minmax(0,1.2fr)_24rem]">
+                    <motion.div
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45, ease: easeInOut }}
+                        className="min-w-0 text-center lg:text-left"
+                    >
+                        <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/25 bg-purple-500/10 px-3 py-1 text-xs font-medium text-zinc-200">
+                            <span className="size-1.5 rounded-full bg-emerald-400" />
                             Available for work
                         </span>
-                        <motion.h3
-                            initial={{ opacity: 0, x: -32 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5, delay: 0.15, ease: easeInOut }}
-                            className="text-[clamp(1.2rem,4.2vw,2.6rem)] leading-tight text-purple-300"
-                        >
-                            AHMAD SABIR
-                        </motion.h3>
-                        <h1 className="mt-1 overflow-visible whitespace-nowrap bg-gradient-to-b from-white to-zinc-400 bg-clip-text pr-[0.12em] text-[clamp(2.1rem,11vw,2.85rem)] leading-[0.95] text-transparent sm:text-[clamp(2.25rem,5.2vw,2.85rem)] md:text-[clamp(2.45rem,5vw,3.15rem)] lg:text-[clamp(2.9rem,4.5vw,3.75rem)] xl:text-[clamp(3.4rem,4.2vw,4.4rem)]">
-                            HIMMAT
+                        <h1 className="mt-5">
+                            <span className="block text-sm font-semibold tracking-[0.28em] text-purple-300 sm:text-base">
+                                AHMAD SABIR
+                            </span>
+                            <span className="holtwood-one-sc-regular mt-2 block text-[clamp(2.7rem,8vw,4.6rem)] leading-none text-white">
+                                HIMMAT
+                            </span>
                         </h1>
-                        <div className="mt-4 min-h-[2.25rem] text-zinc-300">
+                        <div className="mt-4 text-zinc-300">
                             <HeroTitle />
                         </div>
-                        <div className="hero-ctas buttons mt-7 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 min-[640px]:justify-start">
+                        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg lg:mx-0">
+                            I build scalable web and mobile products with the MERN stack, from the interface through APIs, data, and deployment.
+                        </p>
+                        <div className="hero-ctas mt-7 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
                             <a
                                 href="/Ahmad_Sabir_Himmat_Resume.pdf"
                                 className="button type1"
                                 title="Download resume"
                                 download="Ahmad_Sabir_Himmat_Resume.pdf"
-                                type="application/pdf"
                             >
                                 Download CV
                             </a>
                             <LetTalkBtn />
-                        </div>
-                    </div>
-
-                    <div className="sabir-image relative order-2 mt-2 justify-self-center pt-8 sm:mt-0 sm:pt-8">
-                        <figure className="flex h-[21.25rem] w-72 max-w-[85vw] justify-center rounded-2xl bg-neutral-950 shadow-2xl shadow-slate-800 sm:h-80 sm:w-64 sm:max-w-none lg:h-[26.25rem] lg:w-80">
-                            <img
-                                src="sabir.png"
-                                loading="lazy"
-                                alt="Ahmad Sabir Himmat"
-                                className="relative -top-8 h-[22.25rem] max-w-[17rem] rounded-2xl object-cover object-top shadow-2xl shadow-slate-800 transition-all duration-700 hover:translate-y-6 sm:-top-7 sm:h-[21rem] sm:max-w-[16rem] lg:h-[25rem] lg:max-w-[17.5rem] lg:hover:translate-y-9"
-                            />
-                        </figure>
-                    </div>
-
-                    <div className="box order-3 w-full min-[640px]:col-span-2 lg:col-span-1 lg:w-auto">
-                        <div className="wrapper flex flex-row items-center justify-center gap-1 lg:flex-col lg:gap-3">
-                            <a href="https://www.facebook.com/share/1Cm5ugSNk6/" target="_blank" rel="noopener noreferrer" className="icon facebook" aria-label="Facebook">
-                                <div className="tooltip">Facebook</div>
-                                <span>
-                                    <i><FaFacebookF /></i>
-                                </span>
-                            </a>
-                            <a href="https://wa.me/93700784854" target="_blank" rel="noopener noreferrer" className="icon whatapp" aria-label="WhatsApp">
-                                <div className="tooltip">Whatsapp</div>
-                                <span>
-                                    <i><FaWhatsapp /></i>
-                                </span>
-                            </a>
-                            <a href="https://www.instagram.com/sabirhimmat?igsh=cmYybjNpa2F4NXcz" target="_blank" rel="noopener noreferrer" className="icon instagram" aria-label="Instagram">
-                                <div className="tooltip">Instagram</div>
-                                <span>
-                                    <i><FaInstagram /></i>
-                                </span>
-                            </a>
-                            <a href="https://github.com/ahmadsabirhimmat" target="_blank" rel="noopener noreferrer" className="icon github" aria-label="GitHub">
-                                <div className="tooltip">Github</div>
-                                <span>
-                                    <i><FaGithub /></i>
-                                </span>
-                            </a>
-                            <a
-                                href="mailto:sabirkhanhimmat33@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Sabir,"
-                                className="icon email"
-                                aria-label="Email"
-                            >
-                                <div className="tooltip">Email</div>
-                                <span>
-                                    <i><MdOutlineEmail /></i>
-                                </span>
+                            <a href="#projects" className="px-1 text-sm font-semibold text-purple-300 underline-offset-4 hover:underline">
+                                View projects
                             </a>
                         </div>
-                    </div>
+                        <ul className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+                            {socials.map((item) => {
+                                const Icon = item.icon;
+                                return (
+                                    <li key={item.label}>
+                                        <a
+                                            href={item.href}
+                                            aria-label={item.label}
+                                            {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                            className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-base text-zinc-200 transition hover:border-purple-400/60 hover:text-white"
+                                        >
+                                            <Icon aria-hidden="true" />
+                                        </a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                        <dl className="mt-8 grid grid-cols-3 gap-3 border-t border-white/10 pt-6 text-left">
+                            {facts.map((fact) => (
+                                <div key={fact.value}>
+                                    <dt className="text-sm font-semibold text-white sm:text-base">{fact.value}</dt>
+                                    <dd className="mt-1 text-xs leading-snug text-zinc-400 sm:text-sm">{fact.label}</dd>
+                                </div>
+                            ))}
+                        </dl>
+                    </motion.div>
+
+                    <motion.figure
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.45, delay: 0.08, ease: easeInOut }}
+                        className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-none"
+                    >
+                        <div className="absolute inset-x-8 top-10 -z-10 h-3/4 rounded-full bg-purple-500/25 blur-3xl" aria-hidden="true" />
+                        <img
+                            src="/sabir.webp"
+                            alt="Ahmad Sabir Himmat"
+                            width={840}
+                            height={1260}
+                            fetchPriority="high"
+                            decoding="async"
+                            className="aspect-[4/5] w-full rounded-[1.75rem] object-cover object-top shadow-2xl shadow-black/50 ring-1 ring-white/10"
+                        />
+                    </motion.figure>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};

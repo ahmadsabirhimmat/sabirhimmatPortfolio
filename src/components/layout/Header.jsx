@@ -1,78 +1,91 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 import { LetTalkBtn } from "../UI/LetTalkBtn";
 
 const links = [
-    { href: "/", label: "HOME" },
-    { href: "#about", label: "ABOUT" },
-    { href: "#services", label: "SERVICES" },
-    { href: "#experience", label: "EXPERIENCE" },
-    { href: "#skills", label: "SKILLS" },
-    { href: "#projects", label: "PROJECTS" },
-    { href: "#contact", label: "CONTACT" },
+    { href: "#top", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
+    { href: "#experience", label: "Experience" },
+    { href: "#skills", label: "Skills" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" },
 ];
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const closeMenu = () => setIsOpen(false);
 
-    return (
-        <header className="fixed inset-x-0 top-0 z-50 overflow-visible border-b border-white/10 bg-neutral-950/80 backdrop-blur-xl">
-            <section className="site-container flex h-14 items-center justify-between gap-3 sm:h-16">
-                <div className="relative z-20 h-14 w-44 shrink-0 sm:h-16 sm:w-56 lg:w-72">
-                    <NavLink to="/" onClick={closeMenu} className="absolute left-0 top-1/2 block -translate-y-1/2">
-                        <img
-                            src="/Himmat Technical Logo Design.png"
-                            alt="Himmat Technical logo"
-                            className="h-[4.75rem] w-auto max-w-none object-contain sm:h-24 lg:h-[6.75rem]"
-                            loading="lazy"
-                        />
-                    </NavLink>
-                </div>
+    useEffect(() => {
+        if (!isOpen) return undefined;
+        const onKeyDown = (event) => {
+            if (event.key === "Escape") setIsOpen(false);
+        };
+        window.addEventListener("keydown", onKeyDown);
+        return () => window.removeEventListener("keydown", onKeyDown);
+    }, [isOpen]);
 
-                <nav className="hidden xl:block">
-                    <ul className="flex items-center gap-5 text-gray-300 2xl:gap-8">
+    return (
+        <header className="site-header fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-neutral-950/90 backdrop-blur-xl">
+            <div className="site-container flex h-16 items-center gap-3">
+                <a href="#top" onClick={closeMenu} className="shrink-0 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-400">
+                    <img
+                        src="/himmat-technical-logo.webp"
+                        alt="Himmat Technical"
+                        width={314}
+                        height={98}
+                        decoding="async"
+                        className="h-8 w-auto sm:h-9"
+                    />
+                </a>
+
+                <nav className="hidden min-[1100px]:flex min-[1100px]:flex-1 min-[1100px]:justify-center" aria-label="Primary">
+                    <ul className="flex items-center gap-0.5">
                         {links.map((link) => (
                             <li key={link.href}>
-                                <a href={link.href}>{link.label}</a>
+                                <a
+                                    href={link.href}
+                                    className="rounded-md px-2.5 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-zinc-300 transition hover:bg-white/5 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-400 xl:px-3 xl:text-xs"
+                                >
+                                    {link.label}
+                                </a>
                             </li>
                         ))}
                     </ul>
                 </nav>
 
-                <div className="hidden xl:block">
+                <div className="ml-auto flex items-center gap-2 min-[1100px]:ml-0">
                     <LetTalkBtn />
+                    <button
+                        type="button"
+                        onClick={() => setIsOpen((open) => !open)}
+                        className="inline-flex size-10 items-center justify-center rounded-lg border border-white/10 text-xl text-zinc-100 transition hover:bg-white/10 min-[1100px]:hidden"
+                        aria-expanded={isOpen}
+                        aria-controls="mobile-menu"
+                        aria-label={isOpen ? "Close menu" : "Open menu"}
+                    >
+                        {isOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+                    </button>
                 </div>
+            </div>
 
-                <button
-                    type="button"
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-2xl text-gray-200 transition hover:bg-white/10 xl:hidden"
-                    aria-expanded={isOpen}
-                    aria-label={isOpen ? "Close menu" : "Open menu"}
-                >
-                    {isOpen ? "✖" : "☰"}
-                </button>
-            </section>
-
-            <nav
-                className={`overflow-hidden border-t border-white/10 bg-neutral-950/97 transition-all duration-500 ease-in-out xl:hidden ${
-                    isOpen ? "max-h-[36rem] opacity-100" : "max-h-0 opacity-0"
-                }`}
-            >
-                <ul className="flex flex-col gap-1 px-4 py-4 text-gray-300">
-                    {links.map((link) => (
-                        <li key={link.href} className="rounded-lg px-2 py-2.5 hover:bg-white/5">
-                            <a href={link.href} onClick={closeMenu} className="block">
-                                {link.label === "ABOUT" ? "ABOUT ME" : link.label}
-                            </a>
-                        </li>
-                    ))}
-                    <li className="pt-2">
-                        <LetTalkBtn />
-                    </li>
-                </ul>
-            </nav>
+            {isOpen && (
+                <nav id="mobile-menu" className="border-t border-white/10 bg-neutral-950 min-[1100px]:hidden" aria-label="Mobile">
+                    <ul className="site-container grid gap-1 py-3">
+                        {links.map((link) => (
+                            <li key={link.href}>
+                                <a
+                                    href={link.href}
+                                    onClick={closeMenu}
+                                    className="block rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-200 transition hover:bg-white/5 hover:text-white"
+                                >
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            )}
         </header>
     );
 };
